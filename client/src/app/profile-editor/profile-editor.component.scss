@@ -1,0 +1,39 @@
+
+
+label {
+  display: block;
+  margin: .5em 0;
+  font-weight: bold;
+}
+.actions{
+    text-align: center;
+    margin: 4px;
+    padding: 16px;
+    button{
+        width: 120px;
+        height: 40px;
+        border-radius: 4px;
+        border:0px;
+        background-color: rgb(0, 118, 228);
+        color: #fff;
+        padding:4px;
+        font-size: 18px;
+        &:disabled {
+            background: #dddddd;
+        }
+    }
+}
+
+input{
+    min-width:300px;
+    height: 30px;
+    margin-bottom: 4px;
+}
+.alert{
+    color:red;
+}
+ul{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+

@@ -1,0 +1,18 @@
+
+<div class="profile-container">
+  <div class="card">
+    <div class="container">
+      <div *ngIf="user == null">
+        <h2 class="center">Create Profile</h2>
+        <app-profile-editor (formSubmit)="onSubmit($event)" ></app-profile-editor>
+      </div>
+      <div [hidden]="user == null" class="success-container actions">
+        <h2 class="center center-vertical">Welcome <span class="user-name">{{user?.userName}}</span>!</h2>
+        <p>Your profile has been created successfully.</p>
+        <button class="reset" (click)="reset()">Add Another User</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

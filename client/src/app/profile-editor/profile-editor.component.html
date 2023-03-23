@@ -1,0 +1,67 @@
+<form [formGroup]="pf" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName" required>
+
+    <div *ngIf="!f.firstName?.valid && (f.firstName?.dirty ||f.firstName?.touched)">
+        <div class="alert" *ngIf="f.firstName.errors?.['required']">
+            First Name is required
+        </div>
+    </div>
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+    <div *ngIf="!f.lastName?.valid && (f.lastName?.dirty ||f.lastName?.touched)">
+        <div class="alert" *ngIf="f.lastName.errors?.['required']">
+            Last Name is required
+        </div>
+    </div>
+
+    <label for="email">Email: </label>
+    <input id="email" type="text" formControlName="email">
+
+    <div *ngIf="!f.email?.valid && (f.email?.dirty ||f.email?.touched)">
+        <div class="alert" *ngIf="f.email.errors?.['required']">
+            Email is required
+        </div>
+        <div class="alert" *ngIf="f.email.errors?.['email']">
+            Must be valid email address
+        </div>
+    </div>
+
+    <label for="user-name">User Name: </label>
+    <input id="user-name" type="text" formControlName="userName">
+
+    <div *ngIf="!f.userName?.valid && (f.userName?.dirty ||f.userName?.touched)">
+        <div class="alert" *ngIf="f.userName.errors?.['required']">
+            User Name is required
+        </div>
+        <div class="alert" *ngIf="f.userName.errors?.['minlength']">
+            User Name Should Contain Atleast 8 Characters
+        </div>
+    </div>
+
+    <label for="password">Password: </label>
+    <input id="password" type="password" formControlName="password">
+
+    <div *ngIf="!f.password?.valid && (f.password?.dirty ||f.password?.touched)">
+        <div class="alert" *ngIf="f.password.errors?.['required']">
+            Password is required
+        </div>
+        <div class="alert" *ngIf="f.password.errors?.['minlength']">
+            Password Should Contain Atleast 10 Characters
+        </div>
+        <div class="alert" *ngIf="f.password.errors?.['pattern']">
+            Password Must:
+            <ul>
+                <li>contain at least 1 uppercase letter</li>
+                <li>contain at least 1 lowercase letter</li>
+                <li>contain at least 1 number</li>
+                <li>contain at least 1 of the listed special characters !@#$%^&*=_+?</li>
+            </ul>
+        </div>
+    </div>
+    <div class="actions">
+        <button type="submit" [disabled]="!pf.valid">Submit</button>
+    </div>
+</form>

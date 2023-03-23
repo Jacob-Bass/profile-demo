@@ -1,0 +1,50 @@
+.profile-container{
+    
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    height: fit-content;
+    min-width: 120px;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container {
+    padding: 2px 16px;
+}
+.center{
+    text-align: center;
+}
+
+.center-vertical{
+    align-self: center;
+}
+
+.user-name{
+    color:rgb(0, 118, 228);
+}
+
+.actions{
+    text-align: center;
+    margin: 4px;
+    padding: 16px;
+    button{
+       
+        height: 40px;
+        border-radius: 4px;
+        border:0px;
+        background-color: rgb(0, 118, 228);
+        color: #fff;
+        padding:4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 18px;
+        &:disabled {
+            background: #dddddd;
+        }
+    }
+}
